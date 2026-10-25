@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BREWZA Café — premium coffee, cozy moments, freshly made desserts.">
+<meta name="theme-color" content="#2B1D18">
+<title>BREWZA Café — Your Daily Coffee Ritual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+<div class="container header-inner">
+<a href="#home" class="brand" aria-label="BREWZA Café home">
+<span class="brand-logo-wrap">
+<img src="assets/images/brewza-cafe.webp" alt="BREWZA Café logo" class="brand-logo" id="brandLogo" width="48" height="48" loading="eager">
+<span class="brand-fallback" aria-hidden="true">B</span>
+</span>
+<span class="brand-name">BREWZA <span>Café</span></span>
+</a>
+
+<nav class="main-nav" id="mainNav" aria-label="Main navigation">
+<ul>
+<li><a href="#home" data-i18n="nav_home">Home</a></li>
+<li><a href="#menu" data-i18n="nav_menu">Menu</a></li>
+<li><a href="#about" data-i18n="nav_about">About</a></li>
+<li><a href="#location" data-i18n="nav_location">Location</a></li>
+<li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+</ul>
+</nav>
+
+<div class="header-actions">
+<button class="icon-btn" id="langToggle" aria-label="Switch language" title="AR / EN">
+<span id="langLabel">AR</span>
+</button>
+<button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Dark / Light">
+<svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+<svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+</button>
+<button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+<div class="hero-media" aria-hidden="true">
+<img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1920&q=80" alt="" loading="eager" fetchpriority="high">
+</div>
+<div class="hero-overlay"></div>
+<div class="container hero-content">
+<p class="hero-eyebrow" data-i18n="hero_eyebrow">WELCOME TO BREWZA CAFÉ</p>
+<h1 data-i18n="hero_title">Your Daily Coffee Ritual.</h1>
+<p class="hero-sub" data-i18n="hero_sub">Great coffee. Cozy moments. Made for you.</p>
+<a href="#menu" class="btn btn-primary" id="exploreBtn" data-i18n="hero_cta">Explore Our Menu</a>
+</div>
+</section>
+
+<section class="section menu-section" id="menu">
+<div class="container">
+<div class="section-head">
+<p class="eyebrow" data-i18n="menu_eyebrow">OUR DIGITAL MENU</p>
+<h2 data-i18n="menu_title">Something for Every Mood</h2>
+<p class="section-desc" data-i18n="menu_desc">A sample selection of what we love to brew. Prices and items are placeholder examples and can be updated anytime.</p>
+</div>
+<div class="menu-controls">
+<div class="filters" id="categoryFilters" role="group" aria-label="Filter menu by category">
+<button class="filter-btn is-active" data-category="all" aria-pressed="true" data-i18n="filter_all">All</button>
+<button class="filter-btn" data-category="hot" aria-pressed="false" data-i18n="filter_hot">Hot Coffee</button>
+<button class="filter-btn" data-category="iced" aria-pressed="false" data-i18n="filter_iced">Iced Coffee</button>
+<button class="filter-btn" data-category="noncoffee" aria-pressed="false" data-i18n="filter_noncoffee">Non-Coffee</button>
+<button class="filter-btn" data-category="dessert" aria-pressed="false" data-i18n="filter_dessert">Desserts</button>
+</div>
+<div class="search-wrap">
+<label for="menuSearch" class="sr-only" data-i18n="search_label">Search menu items by name</label>
+<input type="search" id="menuSearch" class="menu-search" placeholder="Search menu…" autocomplete="off" data-i18n-placeholder="search_placeholder">
+</div>
+</div>
+<div class="menu-grid" id="menuGrid" aria-live="polite"></div>
+<p class="menu-empty" id="menuEmpty" hidden data-i18n="menu_empty">No items match your search right now. Try another name or category.</p>
+</div>
+</section>
+
+<section class="section about-section" id="about">
+<div class="container about-grid">
+<div class="about-media">
+<img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80" alt="Warm interior of a cozy modern café" loading="lazy" width="900" height="700">
+</div>
+<div class="about-text">
+<p class="eyebrow" data-i18n="about_eyebrow">OUR STORY</p>
+<h2 data-i18n="about_title">More Than Just Coffee.</h2>
+<p data-i18n="about_desc">BREWZA Café was born from a simple idea: a great cup of coffee should feel like a moment of calm in a busy day. We source carefully, brew patiently, and serve with warmth — in a space designed for slow mornings, good conversations, and quiet focus alike.</p>
+<ul class="features">
+<li>
+<span class="feature-icon" aria-hidden="true">☕</span>
+<div>
+<h3 data-i18n="feat1_title">Quality Coffee</h3>
+<p data-i18n="feat1_desc">Thoughtfully sourced beans, roasted and brewed with care.</p>
+</div>
+</li>
+<li>
+<span class="feature-icon" aria-hidden="true">🛋️</span>
+<div>
+<h3 data-i18n="feat2_title">Cozy Atmosphere</h3>
+<p data-i18n="feat2_desc">Warm lighting, soft seating, and a space that feels like home.</p>
+</div>
+</li>
+<li>
+<span class="feature-icon" aria-hidden="true">🍰</span>
+<div>
+<h3 data-i18n="feat3_title">Freshly Made</h3>
+<p data-i18n="feat3_desc">Desserts and drinks prepared fresh throughout the day.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="section location-section" id="location">
+<div class="container">
+<div class="section-head">
+<p class="eyebrow" data-i18n="loc_eyebrow">VISIT US</p>
+<h2 data-i18n="loc_title">Find Us</h2>
+</div>
+<div class="location-grid">
+<div class="location-info">
+<div class="info-block">
+<h3 data-i18n="loc_address">Address</h3>
+<p id="locAddress">—</p>
+</div>
+<div class="info-block">
+<h3 data-i18n="loc_phone">Phone</h3>
+<p id="locPhone">—</p>
+</div>
+<div class="info-block">
+<h3 data-i18n="loc_hours">Opening Hours</h3>
+<p id="locHours">—</p>
+</div>
+<div class="directions-wrap">
+<a href="#" class="btn btn-primary" id="directionsBtn" target="_blank" rel="noopener noreferrer" hidden data-i18n="loc_directions">Get Directions</a>
+<p class="hint" id="directionsHint" hidden data-i18n="loc_hint">Location not configured yet.</p>
+</div>
+</div>
+<div class="location-map" aria-hidden="true">
+<img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy" width="900" height="700">
+</div>
+</div>
+</div>
+</section>
+
+<section class="section contact-section" id="contact">
+<div class="container">
+<div class="section-head">
+<p class="eyebrow" data-i18n="contact_eyebrow">GET IN TOUCH</p>
+<h2 data-i18n="contact_title">Contact</h2>
+</div>
+<div class="contact-grid">
+<div class="contact-card">
+<h3 data-i18n="contact_call">Call Us</h3>
+<p id="contactPhone">—</p>
+<a href="#" class="btn btn-outline" id="callBtn" hidden data-i18n="contact_call_btn">Call Now</a>
+</div>
+<div class="contact-card">
+<h3 data-i18n="contact_wa">WhatsApp</h3>
+<p data-i18n="contact_wa_desc">Message us directly for quick questions.</p>
+<a href="#" class="btn btn-outline" id="whatsappBtn" target="_blank" rel="noopener noreferrer" hidden data-i18n="contact_wa_btn">Chat on WhatsApp</a>
+<p class="hint" id="whatsappHint" hidden data-i18n="contact_wa_hint">WhatsApp number not configured yet.</p>
+</div>
+<div class="contact-card">
+<h3 data-i18n="contact_social">Social</h3>
+<p data-i18n="contact_social_desc">Follow our daily brews and updates.</p>
+<div class="socials">
+<a href="#" id="instagramBtn" class="social-link" target="_blank" rel="noopener noreferrer" hidden>Instagram</a>
+<a href="#" id="facebookBtn" class="social-link" target="_blank" rel="noopener noreferrer" hidden>Facebook</a>
+<p class="hint" id="socialHint" hidden data-i18n="contact_social_hint">Social links not configured yet.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="container footer-grid">
+<div class="footer-brand">
+<a href="#home" class="brand" aria-label="BREWZA Café home">
+<span class="brand-logo-wrap">
+<img src="assets/images/brewza-cafe.webp" alt="BREWZA Café logo" class="brand-logo" id="footerLogo" width="44" height="44" loading="lazy">
+<span class="brand-fallback" aria-hidden="true">B</span>
+</span>
+<span class="brand-name">BREWZA <span>Café</span></span>
+</a>
+<p class="footer-tag" data-i18n="footer_tag">Your daily coffee ritual.</p>
+</div>
+<nav class="footer-nav" aria-label="Footer navigation">
+<h4 data-i18n="footer_explore">Explore</h4>
+<ul>
+<li><a href="#home" data-i18n="nav_home">Home</a></li>
+<li><a href="#menu" data-i18n="nav_menu">Menu</a></li>
+<li><a href="#about" data-i18n="nav_about">About</a></li>
+<li><a href="#location" data-i18n="nav_location">Location</a></li>
+<li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+</ul>
+</nav>
+<div class="footer-contact">
+<h4 data-i18n="footer_visit">Visit</h4>
+<p id="footerAddress" hidden></p>
+<p id="footerPhone" hidden></p>
+</div>
+</div>
+<div class="container footer-bottom">
+<p>© <span id="year"></span> BREWZA Café. <span data-i18n="footer_rights">All rights reserved.</span></p>
+<p class="footer-note" data-i18n="footer_note">Sample menu — content is placeholder and editable.</p>
+</div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
