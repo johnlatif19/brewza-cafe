@@ -1,12 +1,12 @@
 const CAFE_CONFIG = {
   name: "BREWZA Café",
-  address: "",
-  phone: "",
-  whatsapp: "",
-  googleMapsUrl: "",
-  openingHours: "",
-  instagramUrl: "",
-  facebookUrl: ""
+  address: "Demo Address, City, Country",
+  phone: "Demo Phone Number",
+  whatsapp: "Demo WhatsApp Number",
+  googleMapsUrl: "Demo Google Maps URL",
+  openingHours: "Demo Opening Hours",
+  instagramUrl: "Demo Instagram URL",
+  facebookUrl: "Demo Facebook URL"
 };
 
 const MENU_ITEMS = [
